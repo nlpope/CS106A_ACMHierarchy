@@ -10,46 +10,42 @@
 
 import acm.program.*;
 import acm.graphics.*;
-import 
-//import ACMClassBox.*;
 
 
 public class CS106A_ACMHierarchy extends GraphicsProgram
 {	
+	//private HierarchyBox HIERARCHY_BOX_CLASS = new HierarchyBox();
 	private final int BOX_WIDTH = 30;
 	private final int BOX_HEIGHT = 15;
 	private final int PADDING = 20;
 	private GPoint PARENT_ANCHOR_POINT = new GPoint(0,0);
-	private GRect currentBox;
-	private ACMClassBox[] rectArray; 
+	private HierarchyBox currentBox;
+	private HierarchyBox[] rectArray; 
 	
 	public void run()
 	{ 
-		createHierarchyBox(ACMClassEnums.PROGRAM);
-		createHierarchyBox(ACMClassEnums.GRAPHICS_PROGRAM);
-		createHierarchyBox(ACMClassEnums.CONSOLE_PROGRAM);
-		createHierarchyBox(ACMClassEnums.DIALOG_PROGRAM);
+		createBox(ACMClassEnums.PROGRAM);
+		createBox(ACMClassEnums.GRAPHICS_PROGRAM);
+		createBox(ACMClassEnums.CONSOLE_PROGRAM);
+		createBox(ACMClassEnums.DIALOG_PROGRAM);
 	}
 	
 	
-	private void createHierarchyBox(ACMClassEnums acmClass)
+	private void createBox(ACMClassEnums classType)
 	{
-		if (acmClass.parent == true) { createParentBox(acmClass); }
-		else { createChildBox(acmClass); }
+		if (classType.parent == true) { createParentBox(classType); }
+		else { createChildBox(classType); }
 	}
+
 	
-	
-	private void createParentBox(ACMClassEnums acmClass)
+	private void createParentBox(ACMClassEnums classType)
 	{
 		double x = (getWidth() / 2) - (BOX_WIDTH / 2);
 		double y = (getHeight() / 2) - (BOX_HEIGHT / 2);
+		GPoint gPoint = new GPoint(x,y);
 		
-		currentBox = new CustomClass_HierarchyBox(
-				x,
-				y,
-				BOX_WIDTH,
-				BOX_HEIGHT
-		);
+		currentBox = new HierarchyBox();
+		currentBox.createBox(classType, gPoint);
 		
 		
 		PARENT_ANCHOR_POINT = new GPoint(
