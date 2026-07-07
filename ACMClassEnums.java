@@ -1,5 +1,5 @@
 
-public enum ACMClasses 
+public enum ACMClassEnums 
 {
 	PROGRAM("Program", true),
 	GRAPHICS_PROGRAM("Graphics Program", false),
@@ -10,7 +10,7 @@ public enum ACMClasses
 	public final boolean parent; 
 	
 	
-	ACMClasses(String name, boolean parent)
+	ACMClassEnums(String name, boolean parent)
 	{
 		this.name = name;
 		this.parent = parent;

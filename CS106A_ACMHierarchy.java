@@ -17,6 +17,7 @@
 
 import acm.program.*;
 import acm.graphics.*;
+
 //import ACMClassBox.*;
 
 
@@ -31,21 +32,21 @@ public class CS106A_ACMHierarchy extends GraphicsProgram
 	
 	public void run()
 	{ 
-		createHierarchyBox(ACMClasses.PROGRAM);
-		createHierarchyBox(ACMClasses.GRAPHICS_PROGRAM);
-		createHierarchyBox(ACMClasses.CONSOLE_PROGRAM);
-		createHierarchyBox(ACMClasses.DIALOG_PROGRAM);
+		createHierarchyBox(ACMClassEnums.PROGRAM);
+		createHierarchyBox(ACMClassEnums.GRAPHICS_PROGRAM);
+		createHierarchyBox(ACMClassEnums.CONSOLE_PROGRAM);
+		createHierarchyBox(ACMClassEnums.DIALOG_PROGRAM);
 	}
 	
 	
-	private void createHierarchyBox(ACMClasses acmClass)
+	private void createHierarchyBox(ACMClassEnums acmClass)
 	{
 		if (acmClass.parent == true) { createParentBox(acmClass); }
 		else { createChildBox(acmClass); }
 	}
 	
 	
-	private void createParentBox(ACMClasses acmClass)
+	private void createParentBox(ACMClassEnums acmClass)
 	{
 		double x = (getWidth() / 2) - (BOX_WIDTH / 2);
 		double y = (getHeight() / 2) - (BOX_HEIGHT / 2);
@@ -75,7 +76,7 @@ public class CS106A_ACMHierarchy extends GraphicsProgram
 	}
 	
 	
-	private void createChildBox(ACMClasses acmClass)
+	private void createChildBox(ACMClassEnums acmClass)
 	{
 		int i = rectArray.length + 1;
 		String className;
