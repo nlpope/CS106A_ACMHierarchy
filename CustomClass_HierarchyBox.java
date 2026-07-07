@@ -1,7 +1,7 @@
 import acm.program.*;
 import acm.graphics.*;
 
-public class ACMClassBox extends GraphicsProgram
+public class CustomClass_HierarchyBox extends GraphicsProgram
 {
 	private static final int BOX_WIDTH = 30;
 	private static final int BOX_HEIGHT = 15;

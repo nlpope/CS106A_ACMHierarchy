@@ -6,18 +6,11 @@
  * Association for Computing Machinery; It's where most
  * the methods I work with come from.
  * 
- * algorithm based on below link:
- * https://duckduckgo.com/?q=how+to+shrink+a+java+goval+bounding+box+towards+its+center&ia=web
- *
- *!!! I NEED TO ADD A NEW CLASS FOLDER TO BE ABLE TO DEFINE
- *ACMCLASSBOX CREATIONS, BUT HOW DO I DO THAT WITHOUT...
- *I THINK I JUST NEED TO MOVE THE CONTENTS OF ACMCLASSBOX
- *INTO ITS OWN SEPARATE PROJECT.
  */
 
 import acm.program.*;
 import acm.graphics.*;
-
+import 
 //import ACMClassBox.*;
 
 
@@ -51,7 +44,7 @@ public class CS106A_ACMHierarchy extends GraphicsProgram
 		double x = (getWidth() / 2) - (BOX_WIDTH / 2);
 		double y = (getHeight() / 2) - (BOX_HEIGHT / 2);
 		
-		currentBox = new ACMClassBox(
+		currentBox = new CustomClass_HierarchyBox(
 				x,
 				y,
 				BOX_WIDTH,
